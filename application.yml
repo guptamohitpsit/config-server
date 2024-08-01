@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: accountManagement
+
+  datasource:
+    url: jdbc:h2:mem:test
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: sa
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
+
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    lease-expiration-duration-in-seconds: 90
+    lease-renewal-interval-in-seconds: 30
+
+info:
+  app:
+    name: customer-Management
+    description: customer management Services
+    version: 1.0
+
+server:
+  port: 8181
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health,info"
+  info:
+    env:
+      enabled: true
+    info:
+      enabled: true
+
