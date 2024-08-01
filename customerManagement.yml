@@ -11,6 +11,9 @@ spring:
     data: classpath:init.sql
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+    show-sql: true
+      ddl-auto: update
   h2:
     console:
       enabled: true
