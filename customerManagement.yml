@@ -1,48 +1,36 @@
-spring:
-  application:
-    name: customerManagement
+# Application Name
+spring.application.name=customerManagement
 
-  datasource:
-    url: jdbc:h2:mem:customer
-    driver-class-name: org.h2.Driver
-    username: sa
-    password: password
-    initialization-mode: always
-    data: classpath:init.sql
-  jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
-  h2:
-    console:
-      enabled: true
+# DataSource Configuration
+spring.datasource.url=jdbc:h2:mem:customer
+spring.datasource.driver-class-name=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=password
+spring.datasource.initialization-mode=always
+spring.datasource.data=classpath:init.sql
 
-server:
-  port: 8080
-  
-eureka:
-  client:
-    healthcheck:
-      enabled: true
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-  instance:
-    prefer-ip-address: true
-    lease-expiration-duration-in-seconds: 90
-    lease-renewal-interval-in-seconds: 30
+# JPA Configuration
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
 
-info:
-  app:
-    name: customer-Management
-    description: customer management Services
-    version: 1.0
+# H2 Console Configuration
+spring.h2.console.enabled=true
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "health,info"
-  info:
-    env:
-      enabled: true
-    info:
-      enabled: true
+# Server Configuration
+server.port=8080
 
+# Eureka Configuration
+eureka.client.healthcheck.enabled=true
+eureka.client.service-url.defaultZone=http://localhost:8761/eureka/
+eureka.instance.prefer-ip-address=true
+eureka.instance.lease-expiration-duration-in-seconds=90
+eureka.instance.lease-renewal-interval-in-seconds=30
+
+# Info Configuration
+info.app.name=customer-Management
+info.app.description=customer management Services
+info.app.version=1.0
+
+# Management Endpoints Configuration
+management.endpoints.web.exposure.include=health,info
+management.info.env.enabled=true
+management.info.info.enabled=true
