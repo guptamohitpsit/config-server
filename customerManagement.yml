@@ -7,6 +7,8 @@ spring:
     driver-class-name: org.h2.Driver
     username: sa
     password: sa
+    initialization-mode: always
+    data: classpath:init.sql
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
   h2:
